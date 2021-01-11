@@ -45,9 +45,12 @@ ________________________________________________________________________________
 > - this api is a POST request that returns a map <String, List <String>> filtering the headers that are requested.
 
 
+#### to generate the uni test report use the following command
+
+            mvn surefire-report:report
 
 
-
+ 
 
 --------------------------------------------------------------------------------------------------------------------------------
  Created by: ****Alfonso Chavez Email: alfonso.chavez@ids.com.mx | alfonso.chavez.a@gmail.com****
