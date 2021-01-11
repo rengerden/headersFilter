@@ -1,10 +1,11 @@
 package com.citi.banamex.headers.example.constant;
 
-import java.io.Serializable;
+
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.stereotype.Component;
 
+import java.io.Serializable;
 
 /**
  * Api Constants for Controller class.
