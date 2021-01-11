@@ -1,4 +1,4 @@
-package com.citi.banamex.headers.example.business;
+package com.citi.banamex.headers.example.service.impl;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -14,21 +14,45 @@ import org.mockito.quality.Strictness;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.mock.web.MockHttpServletRequest;
 
+/**
+ * Test of Header service implementation class.
+ * 
+ * @author Alfonso Chávez.
+ *
+ */
 @MockitoSettings(strictness = Strictness.LENIENT)
 @AutoConfigureMockMvc
 class HeadersServiceImplTest {
-
+  
+  /**
+   *  Headers service implementation for coverage.
+   */
   @InjectMocks
   HeadersServiceImpl headersServiceImpl;
 
+  /**
+   * Mock of HttpServletRequest.
+   */
   MockHttpServletRequest request;
 
+  /**
+   * Map expected in a correct response.
+   */
   Map<String, List<String>> mapExtractedExpected;
 
+  /**
+   * Map filtered expected in a correct response.
+   */
   Map<String, List<String>> mapFilteredExpected;
 
+  /**
+   * Filter list of headers names.
+   */
   List<String> headerNames;
 
+  /**
+   * Initializing of mockito.
+   */
   @BeforeEach
   public void init() {
     request = new MockHttpServletRequest();
@@ -47,12 +71,18 @@ class HeadersServiceImplTest {
     headerNames.add("uuid");
   }
 
+  /**
+   * Test of method to retrieve all headers in a httpServletRequest.
+   */
   @Test
   void getAllHeadersTest() {
     Map<String, List<String>> mapResponse = headersServiceImpl.getAllHeaders(request);
     assertEquals(mapExtractedExpected, mapResponse);
   }
 
+  /**
+   * Test of method to retrieve all headers filtered by a list sent by user in a httpServletRequest.
+   */
   @Test
   void getAllHeadersFiltered() {
     Map<String, List<String>> mapResponse =

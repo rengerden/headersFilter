@@ -1,0 +1,7 @@
+server:
+    port: 9090
+constants:
+    api:
+        gralPath: "v1/api/headers"
+        extractionPath: "/extraction"
+        filterPath : "/filter"

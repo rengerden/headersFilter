@@ -18,24 +18,51 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.mock.web.MockHttpServletRequest;
 import com.citi.banamex.headers.example.service.HeadersService;
 
+/**
+ * Example to filter a extract Headers controller test.
+ * 
+ * @author Alfonso Chávez.
+ *
+ */
 @MockitoSettings(strictness = Strictness.LENIENT)
 @AutoConfigureMockMvc
 class HeadersExampleCrontrollerTest {
 
+  /**
+   * Headers Service injection is a mock.
+   */
   @Mock
   HeadersService headersService;
 
+  /**
+   * Header Example Controller injection for coverage.
+   */
   @InjectMocks
   HeaderExampleController headerExampleController;
 
+  /**
+   * Mock of HttpServletRequest.
+   */
   MockHttpServletRequest request;
 
+  /**
+   * Map expected in a correct response.
+   */
   Map<String, List<String>> mapExpected;
 
+  /**
+   * Filter list of headers names.
+   */
   List<String> headerNames;
 
+  /**
+   * Number Http status of correct response.
+   */
   private final static int OK = 200;
 
+  /**
+   * Initializing of mockito.
+   */
   @BeforeEach
   public void init() {
     request = new MockHttpServletRequest();
@@ -53,6 +80,10 @@ class HeadersExampleCrontrollerTest {
     headerNames.add("uuid");
   }
 
+  /**
+   * Test for extract all headers.
+   * 
+   */
   @Test
   @DisplayName("Header extraction Test")
   public void headersExtractionTest() {
@@ -66,6 +97,9 @@ class HeadersExampleCrontrollerTest {
     assertEquals(mapExpected, httpResponse.getBody());
   }
 
+  /**
+   * Test for retrieve filtered headers by list.
+   */
   @Test
   @DisplayName("Header filter Test")
   public void headersFilterTest() {

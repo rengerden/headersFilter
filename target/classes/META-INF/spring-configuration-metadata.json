@@ -1,0 +1,11 @@
+{
+  "groups": [
+    {
+      "name": "",
+      "type": "com.citi.banamex.headers.example.constant.ApiConstants",
+      "sourceType": "com.citi.banamex.headers.example.constant.ApiConstants"
+    }
+  ],
+  "properties": [],
+  "hints": []
+}

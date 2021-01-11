@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.citi.banamex.headers.example.controller.HeadersExampleCrontrollerTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.464 s - in com.citi.banamex.headers.example.controller.HeadersExampleCrontrollerTest
